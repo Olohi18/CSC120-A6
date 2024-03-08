@@ -5,7 +5,7 @@ public class House extends Building {
   private boolean hasDiningRoom;
   private boolean hasElevator;
 
-  //When inheriting, you have to entire every attribute and define super later
+  //When inheriting, you have to enter every attribute and define super later
   public House(String name, String address, int nFloors, boolean hasDiningRoom, boolean hasElevator) {
     super(name, address, nFloors);
     this.residents = new ArrayList<String>();
@@ -34,8 +34,8 @@ public class House extends Building {
   //implement the isResident fuction into the program
   public String moveOut(String name){
     if (isResident(name)){
-      System.out.println("------------\nRemoving" + name);
-      this.residents.add(name);
+      System.out.println("------------\nRemoving " + name);
+      this.residents.remove(name);
       return (name + " removed!");}
     else{
       return (name + " doesn't live in this house");}
@@ -72,7 +72,11 @@ public class House extends Building {
     parsons.moveIn("Olohi");
     parsons.moveIn("Oyale");
     parsons.moveIn("Agaba");
+    parsons.moveIn("x");
+    parsons.moveOut("x");
+
     System.out.println(parsons);
+
 
     
 
