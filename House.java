@@ -1,11 +1,18 @@
 import java.util.ArrayList;
-/* This is a stub for the House class */
+
 public class House extends Building {
   private ArrayList<String> residents;
   private boolean hasDiningRoom;
   private boolean hasElevator;
 
-  //When inheriting, you have to enter every attribute and define super later
+  /**
+   * Constructor for house class
+   * @param name
+   * @param address
+   * @param nFloors
+   * @param hasDiningRoom
+   * @param hasElevator
+   */
   public House(String name, String address, int nFloors, boolean hasDiningRoom, boolean hasElevator) {
     super(name, address, nFloors);
     this.residents = new ArrayList<String>();
@@ -13,25 +20,37 @@ public class House extends Building {
     System.out.println("You have built a house: 🏠");
   }
 
-  //accessor for DiningRoom
+  /**
+   * Accessor for DiningRoom
+   * @return boolean this.hasDiningRoom
+   */
   public boolean hasDiningRoom(){
     return this.hasDiningRoom;
   }
 
-  //accessor for number of residents
+  /**
+   * Accessor for nResidents
+   * @return boolean number of residents
+   */
   public int nResidents(){
     return this.residents.size();
   }
 
-  //adds a resident to a house
+  /**
+   * Adds a resident to a house
+   * @param name
+   */
   public void moveIn(String name){
     System.out.println("------------\nAdding " + name);
     this.residents.add(name);
     System.out.println("............" + name + " added.............");
   }
 
-  //removes a resident from a house
-  //implement the isResident fuction into the program
+  /**
+   * Removes a resident from a house
+   * @param name
+   * @return
+   */
   public String moveOut(String name){
     if (isResident(name)){
       System.out.println("------------\nRemoving " + name);
@@ -41,12 +60,18 @@ public class House extends Building {
       return (name + " doesn't live in this house");}
     }
 
-  //Checks if a person is a resident of a house
+  /**
+   * Checks if a house contains a resident
+   * @param person
+   * @return
+   */
   public boolean isResident(String person){
     return this.residents.contains(person);
   }  
 
-  //prints out the names of the residents in a house
+  /**
+   * Prints out the residents in a house
+   */
   public String toString(){
     String desc = super.toString();
     if (this.hasDiningRoom = true){
@@ -64,7 +89,7 @@ public class House extends Building {
     }
     
   
-
+// Main function for testing code's functionality
   public static void main(String[] args) {
     House parsons = new House("Parsons", "19 RoundHill Road", 3, true, false);
     // System.out.println(parsons.hasDiningRoom());

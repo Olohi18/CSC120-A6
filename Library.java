@@ -9,13 +9,20 @@ public class Library extends Building {
         this.collection = new Hashtable<String, Boolean>();
     }
 
-    //Adds book to Library //check if it exists first also
+    /**
+     * Adds a book to the libarary's collection
+     * @param String title
+     */
     public void addTitle(String title){
         System.out.println("------------\nAdding " + title);
         this.collection.put(title, true);
     }
 
-    //Removes book from library
+    /**
+     * Removes book from library's collection
+     * @param String title
+     * @return String that indicates if the book has been removed or otherwise, if it's not present
+     */
     public String removeTitle(String title){
       if (this.collection.get(title) == true){
         System.out.println("------------\nRemoving " + title);
@@ -27,7 +34,10 @@ public class Library extends Building {
       }
     }
 
-    //updates the value of the title if available from true to false during check out
+    /**
+     * Updates the value of the book's title if available in hashtable from true to false
+     * @param String title
+     */
     public void checkOut(String title){
       //System.out.println(this.collection.keySet());
       if (this.collection.containsKey(title)){
@@ -46,7 +56,10 @@ public class Library extends Building {
       }
     }
 
-    //Returns a book and updates its availability to true
+    /**
+     * Returns a book and updates its associated boolean in the library's hashtable to true
+     * @param String title
+     */
     public void returnBook(String title){
       if (this.collection.containsKey(title)){
         System.out.println("------------\nChecking in " + title);
@@ -58,6 +71,11 @@ public class Library extends Building {
       }
     }
 
+    /**
+     * Checks if the library contains a specific book
+     * @param String title
+     * @return
+     */
     public boolean containsTitle(String title){
       if (this.collection.containsKey(title)){
         System.out.println("-----------\n" + title + " is available at " + this.name);
@@ -70,6 +88,10 @@ public class Library extends Building {
     }
 
 
+    /**
+     * Prints out the books in the library
+     * @return String library
+     */
     public String toString(){
       this.collection.keys();
       System.out.println("--------------------------------");
@@ -85,9 +107,8 @@ public class Library extends Building {
         Library Neilson = new Library("Neilson", "Massachusetts", 5);
         Neilson.addTitle("Golden Gulag by Rotkins");
         Neilson.addTitle("Empower by Daniels");
-        Neilson.addTitle("Labouring Women by Smallwood Stephanie");
         Neilson.checkOut("Golden Gulag by Rotkins");
-        System.out.println(Neilson.removeTitle("Golden Gulag by Rotkins"));
+        Neilson.removeTitle("Golden Gulag by Rotkins"); // Need to "Sout" to see side effect
         Neilson.containsTitle("Empower by Daniels");
         Neilson.checkOut("Empower by Daniels");
         Neilson.returnBook("Golden Gulag by Rotkins");
