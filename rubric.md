@@ -54,7 +54,7 @@ ___YES__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       ___YES__ Methods & variables all have clear and accurate names
 
-      ___MAYBE__ Methods avoid confusing side effects
+      ___YES__ Methods avoid confusing side effects
 
 ___YES__ 1 pt: All required files included with submission (including completed `rubric.md` file)
 

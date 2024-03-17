@@ -33,7 +33,7 @@ public class Cafe extends Building{
     public void sellCoffee(int size, int nSugarPackets, int nCreams){
         int value = 2;
         if (this.nCoffeeOunces < 1 | this.nSugarPackets < 1 | this.nCreams < 1 | this.nCups < 1){
-            System.out.println("-----------\nYou need to restock. One of your items is out of stock");
+            System.out.println("You need to restock. One of your items is out of stock");
 
 
             this.restock((value * size), (value * nSugarPackets), (value * nCreams), (value * nCreams));
@@ -41,7 +41,7 @@ public class Cafe extends Building{
         
 
         else if (this.nCoffeeOunces < size | this.nSugarPackets < nSugarPackets | this.nCreams < nCreams | this.nCups < 1){
-            System.out.println("-----------\nYou need to restock. One of your items isn't enough to make the requested amount of coffee");
+            System.out.println("You need to restock. One of your items isn't enough to make the requested amount of coffee");
             this.restock((value * size), (value * nSugarPackets), (value * nCreams), (value * nCreams));
         }
 
@@ -50,7 +50,7 @@ public class Cafe extends Building{
         this.nSugarPackets -= nSugarPackets;
         this.nCreams -= nCreams;
         this.nCups -= 1;
-        System.out.println("Coffee sold!\n------------");
+        System.out.println("Coffee sold!");
         }
       
     
@@ -67,7 +67,7 @@ public class Cafe extends Building{
         this.nSugarPackets = nSugarPackets;
         this.nCreams = nCreams;
         this.nCups = nCups;
-        System.out.println("Cafe restocked! Proceeding to delivering requested amount of coffee\n------------");
+        System.out.println("Cafe restocked! Proceeding to delivering requested amount of coffee");
     }
 
     /**

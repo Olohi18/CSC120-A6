@@ -41,7 +41,7 @@ public class House extends Building {
    * @param name
    */
   public void moveIn(String name){
-    System.out.println("------------\nAdding " + name);
+    System.out.println("Adding " + name);
     this.residents.add(name);
     System.out.println("............" + name + " added.............");
   }
@@ -53,7 +53,7 @@ public class House extends Building {
    */
   public String moveOut(String name){
     if (isResident(name)){
-      System.out.println("------------\nRemoving " + name);
+      System.out.println("...........Removing " + name + "...........");
       this.residents.remove(name);
       return (name + " removed!");}
     else{
