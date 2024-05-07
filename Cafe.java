@@ -36,13 +36,13 @@ public class Cafe extends Building{
             System.out.println("You need to restock. One of your items is out of stock");
 
 
-            this.restock((value * size), (value * nSugarPackets), (value * nCreams), (value * nCreams));
+            this.restock((value * size), (value * nSugarPackets), (value * nCreams), (this.nCups += 1));
         }
         
 
         else if (this.nCoffeeOunces < size | this.nSugarPackets < nSugarPackets | this.nCreams < nCreams | this.nCups < 1){
             System.out.println("You need to restock. One of your items isn't enough to make the requested amount of coffee");
-            this.restock((value * size), (value * nSugarPackets), (value * nCreams), (value * nCreams));
+            this.restock((value * size), (value * nSugarPackets), (value * nCreams), (this.nCups += 1));
         }
 
         System.out.println("----------------Selling Coffee!-------------");

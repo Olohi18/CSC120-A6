@@ -41,9 +41,12 @@ public class House extends Building {
    * @param name
    */
   public void moveIn(String name){
+    if (!(isResident(name))){
     System.out.println("Adding " + name);
     this.residents.add(name);
-    System.out.println("............" + name + " added.............");
+    System.out.println("............" + name + " added.............");}
+    else{
+      System.out.println(name + " already lives in " + this.name);}
   }
 
   /**
@@ -94,6 +97,7 @@ public class House extends Building {
     House parsons = new House("Parsons", "19 RoundHill Road", 3, true, false);
     // System.out.println(parsons.hasDiningRoom());
     // System.out.println(parsons.nResidents());
+    parsons.moveIn("Olohi");
     parsons.moveIn("Olohi");
     parsons.moveIn("Oyale");
     parsons.moveIn("Agaba");
